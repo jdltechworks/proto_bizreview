@@ -6,17 +6,19 @@ env = environ.Env()
 
 env.read_env('.env')
 
+if not env('LOCAL'):
+    from settings.production import *
+else:
+    from settings.local import *
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROJECT_NAME = 'proto_bizreview'
+PROJECT_ROOT = os.path.join(BASE_DIR, PROJECT_NAME)
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'rl7xg%c!q9l)$6x-+d@1r@=4!-6!+l!1(q7_^^8(%!_u2s8#33'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG', default=True)
 
 ALLOWED_HOSTS = []
 
@@ -42,14 +44,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'config.urls'
+ROOT_URLCONF = "{}.urls".format(PROJECT_NAME)
+WSGI_APPLICATION = "{}.wsgi.application".format(PROJECT_NAME)
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            'proto_bizreview'
-        ],
+        'DIRS': [PROJECT_ROOT],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -61,9 +62,6 @@ TEMPLATES = [
         },
     },
 ]
-
-WSGI_APPLICATION = 'config.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
