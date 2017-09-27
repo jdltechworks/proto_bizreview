@@ -7,5 +7,4 @@ class HomeView(TemplateView):
     template_name = 'templates/home.html'
 
     def get(self, *args, **kwargs):
-        print(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
         return render(self.request, self.template_name)
