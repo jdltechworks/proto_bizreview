@@ -1,5 +1,9 @@
 import os
 
+import environ
+
+env = environ.Env()
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -13,6 +17,8 @@ SECRET_KEY = 'rl7xg%c!q9l)$6x-+d@1r@=4!-6!+l!1(q7_^^8(%!_u2s8#33'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
+
 
 
 # Application definition
@@ -65,10 +71,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    'default': env.db("DATABASE_URL", default='postgresql://postgres:qweasdzxc!!@localhost:5432/proto_bizreview'),
 }
 
 
