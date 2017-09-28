@@ -1,0 +1,15 @@
+{
+    "status": "done",
+    "publicPath": "http://localhost:8080/hot/js/",
+    "chunks": {
+        "main": [
+            {
+                "name": "app.js",
+                "publicPath": "http://localhost:8080/hot/js/app.js",
+                "path": "/Users/kinbasco/Desktop/Code/proto_bizreview/client/hot/app.js"
+            }
+        ]
+    },
+    "startTime": 1506582143536,
+    "endTime": 1506582147347
+}

@@ -1,6 +1,6 @@
 import { join, resolve } from 'path'
 import merge from 'webpack-merge'
-import { paths } from 'paths'
+import { output_paths } from './base'
 
 
 export default ({env, options}) => {
@@ -10,7 +10,7 @@ export default ({env, options}) => {
     }
     return merge.strategy(strategy)({
         output: {
-          path: paths.production,
+          path: output_paths.production,
           filename: 'app.js'
         },
         plugins: [
