@@ -1,3 +1,5 @@
 *.pyc
 *.pyo
 *.env
+
+client/node_modules

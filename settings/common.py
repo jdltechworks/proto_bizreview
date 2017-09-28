@@ -6,19 +6,19 @@ env = environ.Env()
 
 env.read_env('.env')
 
-if not env('LOCAL'):
-    from settings.production import *
-else:
-    from settings.local import *
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_NAME = 'proto_bizreview'
 PROJECT_ROOT = os.path.join(BASE_DIR, PROJECT_NAME)
 
-SECRET_KEY = 'rl7xg%c!q9l)$6x-+d@1r@=4!-6!+l!1(q7_^^8(%!_u2s8#33'
-
 DEBUG = env('DEBUG', default=True)
+
+if not env('LOCAL'):
+    from settings.production import *
+else:
+    from settings.local import *
+
+SECRET_KEY = 'rl7xg%c!q9l)$6x-+d@1r@=4!-6!+l!1(q7_^^8(%!_u2s8#33'
 
 ALLOWED_HOSTS = []
 
@@ -108,3 +108,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'CACHE': not DEBUG,
+        'BUNDLE_DIR_NAME': 'webpack_bundles/', # must end with slash
+        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
+        'POLL_INTERVAL': 0.1,
+        'TIMEOUT': None,
+        'IGNORE': ['.+\.hot-update.js', '.+\.map']
+    }
+}
