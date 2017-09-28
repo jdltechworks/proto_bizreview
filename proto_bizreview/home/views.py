@@ -4,4 +4,4 @@ import os
 
 # Create your views here.
 class HomeView(TemplateView):
-    template_name = 'templates/home.html'
+    template_name = 'home.html'

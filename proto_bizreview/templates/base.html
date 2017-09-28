@@ -1,0 +1,8 @@
+{% load staticfiles %}
+{% load render_bundle from webpack_loader %}
+
+{% block content %} {% endblock content %}
+
+{% block extra_js %} {% endblock extra_js %}
+
+{% render_bundle 'main' %}

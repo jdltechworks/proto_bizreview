@@ -1,5 +1,14 @@
-{% load render_bundle from webpack_loader %}
+{% extends 'base.html' %}
+{% load staticfiles %}
 
-<h1>Hello world!</h1>
+{% block content %}
+    <h1>Hello shit!</h1>
+{% endblock content %}
 
-{% render_bundle 'main' %}
+{% block extra_js %}
+    <script type="text/javascript">
+        var states = {
+            shared: "Dildo"
+        }
+    </script>
+{% endblock extra_js %}
