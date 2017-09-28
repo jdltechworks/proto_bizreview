@@ -1,0 +1,8 @@
+{
+  "name": "proto_bizreview",
+  "version": "0.0.0",
+  "description": "front-end for bizreview",
+  "main": "index.js",
+  "author": "jdltechworks",
+  "license": "UNLICENSED"
+}
