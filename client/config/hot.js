@@ -10,13 +10,8 @@ export default ({env, options}) => {
     }
     return merge.strategy(strategy)({
         output: {
-          path: paths.development,
+          path: paths.hot,
           filename: 'app.js'
-        },
-        module: {
-          rules: [
-            { test: /\.js$/, use: 'babel-loader' }
-          ]
         },
         plugins: [
         ]
