@@ -11,7 +11,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_NAME = 'proto_bizreview'
 PROJECT_ROOT = os.path.join(BASE_DIR, PROJECT_NAME)
 
-DEBUG = env('DEBUG', default=True)
+DEBUG = env('DEBUG', default=False)
 
 if not env('LOCAL'):
     from settings.production import *
@@ -110,14 +110,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
-
-WEBPACK_LOADER = {
-    'DEFAULT': {
-        'CACHE': not DEBUG,
-        'BUNDLE_DIR_NAME': 'js/', # must end with slash
-        'STATS_FILE': os.path.join(BASE_DIR, 'client/hot/webpack-stats.json'),
-        'POLL_INTERVAL': 0.1,
-        'TIMEOUT': None,
-        'IGNORE': ['.+\.hot-update.js', '.+\.map']
-    }
-}
