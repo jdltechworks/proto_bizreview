@@ -9,3 +9,6 @@ djangorestframework==3.6.4
 
 # Time zones support
 pytz==2017.2
+
+# Postgres ORM
+psycopg2==2.7.3.1

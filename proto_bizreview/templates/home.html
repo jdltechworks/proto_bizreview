@@ -1,5 +1,14 @@
 {% load render_bundle from webpack_loader %}
-
-<h1>Hello world!</h1>
-
-{% render_bundle 'main' %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Django React boiler plate</title>
+    </head>
+    <body>
+        {% render_bundle 'app' %}
+        <div id="app"></div>
+        <script>
+            app.useClient({ sample: 1, sample: 2}, 'app')
+        </script>
+    </body>
+</html>
