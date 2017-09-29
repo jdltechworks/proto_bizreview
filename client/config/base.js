@@ -13,13 +13,15 @@ export const output_paths = {
     production: join(__dirname, `${document_root}/dist`)
 }
 
-export const entry = [
-    join(__dirname, `${document_root}/src/app.js`)
-]
+export const entry = {
+    'app': [join(__dirname, `${document_root}/src/index.js`)]
+}
 
 export const rules = [
     {
-        test: /\.js$/, use: 'babel-loader'
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "babel-loader"
     }
 ]
 
@@ -32,13 +34,16 @@ export const environment = {
 export default ({env, options}) => {
     let config = {
         entry,
+        target: 'web',
         output: {
             path: join(output_paths[env]),
-            filename: '[hash].js'
+            filename: '[name].js',
+            libraryTarget: 'var',
+            library: '[name]'
         },
         module: {
             rules
-            },
+        },
         plugins: [
             new BundleTracker({
                 path: join(output_paths[env]),
@@ -51,11 +56,9 @@ export default ({env, options}) => {
 
     const strategy = {
         'output': 'append',
-        'entry': 'replace',
+        'entry': 'append',
         'plugins': 'append'
     }
-
-    console.log(environment[env]())
 
     return merge.strategy(strategy)(config, environment[env]())
 }

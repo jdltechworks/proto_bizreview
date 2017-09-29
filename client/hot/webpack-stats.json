@@ -2,14 +2,41 @@
     "status": "done",
     "publicPath": "http://localhost:8080/hot/js/",
     "chunks": {
-        "main": [
+        "app": [
             {
                 "name": "app.js",
                 "publicPath": "http://localhost:8080/hot/js/app.js",
-                "path": "/Users/kinbasco/Desktop/Code/proto_bizreview/client/hot/app.js"
+                "path": "/Users/jdltechworks/Projects/proto_bizreview/client/hot/app.js"
+            },
+            {
+                "name": "0.4bf6169b7f3d9efbabc6.hot-update.js",
+                "publicPath": "http://localhost:8080/hot/js/0.4bf6169b7f3d9efbabc6.hot-update.js",
+                "path": "/Users/jdltechworks/Projects/proto_bizreview/client/hot/0.4bf6169b7f3d9efbabc6.hot-update.js"
+            },
+            {
+                "name": "app.js.map",
+                "publicPath": "http://localhost:8080/hot/js/app.js.map",
+                "path": "/Users/jdltechworks/Projects/proto_bizreview/client/hot/app.js.map"
+            },
+            {
+                "name": "0.4bf6169b7f3d9efbabc6.hot-update.js.map",
+                "publicPath": "http://localhost:8080/hot/js/0.4bf6169b7f3d9efbabc6.hot-update.js.map",
+                "path": "/Users/jdltechworks/Projects/proto_bizreview/client/hot/0.4bf6169b7f3d9efbabc6.hot-update.js.map"
+            }
+        ],
+        "hot": [
+            {
+                "name": "hot.js",
+                "publicPath": "http://localhost:8080/hot/js/hot.js",
+                "path": "/Users/jdltechworks/Projects/proto_bizreview/client/hot/hot.js"
+            },
+            {
+                "name": "hot.js.map",
+                "publicPath": "http://localhost:8080/hot/js/hot.js.map",
+                "path": "/Users/jdltechworks/Projects/proto_bizreview/client/hot/hot.js.map"
             }
         ]
     },
-    "startTime": 1506582143536,
-    "endTime": 1506582147347
+    "startTime": 1506668085451,
+    "endTime": 1506668086095
 }
