@@ -1,14 +1,11 @@
-{% load render_bundle from webpack_loader %}
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Django React boiler plate</title>
-    </head>
-    <body>
-        {% render_bundle 'app' %}
-        <div id="app"></div>
-        <script>
-            app.useClient({ sample: 1, sample: 2}, 'app')
-        </script>
-    </body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}
+    Django react setup
+{% endblock title %}
+
+{% block extra_js %}
+    <script>
+        app.useClient({ sample: 1, sample: 2}, 'app')
+    </script>
+{% endblock extra_js %}

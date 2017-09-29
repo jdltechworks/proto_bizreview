@@ -1,0 +1,14 @@
+{% load staticfiles %}
+{% load render_bundle from webpack_loader %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock title %}</title>
+    </head>
+    <body>
+        <div id="app"></div>
+        {% block content %} {% endblock content %}
+        {% render_bundle 'app' %}
+        {% block extra_js %} {% endblock extra_js %}
+    </body>
+</html>
